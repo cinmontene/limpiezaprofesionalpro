@@ -1,0 +1,1371 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>LM PRO – Limpieza Profesional | Montevideo, Uruguay</title>
+  <meta name="description" content="LM PRO ofrece servicios de limpieza profesional para hogares en Montevideo. Confiable, puntual y con resultados impecables. ¡Pedí tu cotización hoy!">
+  <meta property="og:title" content="LM PRO – Limpieza Profesional">
+  <meta property="og:description" content="Tu hogar, impecable. Servicios de limpieza profesional en Montevideo, Uruguay.">
+  <meta property="og:image" content="og-image.jpg"><!-- reemplazar con imagen real -->
+  <!-- favicon: colocar favicon.ico en esta misma carpeta -->
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --navy: #0d2452;
+      --blue: #1a7fe8;
+      --blue-light: #e8f2fd;
+      --blue-mid: #2e90f5;
+      --white: #ffffff;
+      --gray-50: #f8fafc;
+      --gray-100: #f1f5f9;
+      --gray-300: #cbd5e1;
+      --gray-500: #64748b;
+      --gray-700: #334155;
+      --gray-900: #0f172a;
+      --radius-sm: 8px;
+      --radius-md: 14px;
+      --radius-lg: 22px;
+      --shadow-sm: 0 1px 3px rgba(13,36,82,0.08), 0 1px 2px rgba(13,36,82,0.04);
+      --shadow-md: 0 4px 16px rgba(13,36,82,0.10), 0 1px 4px rgba(13,36,82,0.06);
+      --shadow-lg: 0 12px 40px rgba(13,36,82,0.14), 0 2px 8px rgba(13,36,82,0.08);
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      color: var(--gray-900);
+      background: var(--white);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    h1, h2, h3, h4 {
+      font-family: 'Montserrat', sans-serif;
+      line-height: 1.15;
+    }
+
+    img { max-width: 100%; display: block; }
+
+    a { color: inherit; text-decoration: none; }
+
+    .container {
+      max-width: 1120px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    /* ── NAV ── */
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(255,255,255,0.95);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--gray-100);
+    }
+
+    .nav-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 68px;
+    }
+
+    .nav-logo {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .nav-logo-icon {
+      width: 44px;
+      height: 44px;
+      background: var(--navy);
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      /* reemplazar con: <img src="logo.png" alt="LM PRO"> */
+    }
+
+    .nav-logo-icon svg { width: 26px; height: 26px; }
+
+    .nav-brand { font-family: 'Montserrat', sans-serif; }
+    .nav-brand-main { font-weight: 800; font-size: 17px; color: var(--navy); letter-spacing: -0.3px; }
+    .nav-brand-sub { font-size: 11px; color: var(--gray-500); font-weight: 500; letter-spacing: 0.5px; text-transform: uppercase; }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 32px;
+      list-style: none;
+    }
+
+    .nav-links a {
+      font-size: 14px;
+      font-weight: 500;
+      color: var(--gray-700);
+      transition: color 0.2s;
+    }
+    .nav-links a:hover { color: var(--blue); }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 11px 22px;
+      border-radius: var(--radius-sm);
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 700;
+      font-size: 14px;
+      cursor: pointer;
+      border: none;
+      transition: all 0.2s;
+      text-decoration: none;
+      white-space: nowrap;
+    }
+
+    .btn-primary {
+      background: var(--blue);
+      color: var(--white);
+    }
+    .btn-primary:hover { background: #1570d0; transform: translateY(-1px); box-shadow: var(--shadow-md); }
+
+    .btn-secondary {
+      background: var(--white);
+      color: var(--navy);
+      border: 2px solid var(--navy);
+    }
+    .btn-secondary:hover { background: var(--navy); color: var(--white); }
+
+    .btn-white {
+      background: var(--white);
+      color: var(--navy);
+    }
+    .btn-white:hover { background: var(--blue-light); }
+
+    .btn-lg { padding: 15px 30px; font-size: 16px; border-radius: var(--radius-md); }
+
+    .hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; padding: 4px; }
+    .hamburger span { width: 24px; height: 2px; background: var(--navy); border-radius: 2px; transition: all 0.3s; display: block; }
+
+    /* ── HERO ── */
+    .hero {
+      background: linear-gradient(135deg, var(--navy) 0%, #1a3870 60%, #1a5fa8 100%);
+      padding: 100px 0 80px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.03'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+    }
+
+    .hero-content {
+      position: relative;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 60px;
+      align-items: center;
+    }
+
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(255,255,255,0.12);
+      border: 1px solid rgba(255,255,255,0.2);
+      padding: 6px 14px;
+      border-radius: 100px;
+      font-size: 13px;
+      color: rgba(255,255,255,0.9);
+      margin-bottom: 24px;
+      font-weight: 500;
+    }
+
+    .hero-badge-dot {
+      width: 6px; height: 6px;
+      background: #4ade80;
+      border-radius: 50%;
+    }
+
+    .hero h1 {
+      font-size: clamp(36px, 5vw, 56px);
+      font-weight: 800;
+      color: var(--white);
+      letter-spacing: -1px;
+      margin-bottom: 20px;
+    }
+
+    .hero h1 span { color: #60b4ff; }
+
+    .hero-sub {
+      font-size: 18px;
+      color: rgba(255,255,255,0.78);
+      margin-bottom: 36px;
+      max-width: 480px;
+      line-height: 1.65;
+    }
+
+    .hero-actions {
+      display: flex;
+      gap: 14px;
+      flex-wrap: wrap;
+    }
+
+    .hero-visual {
+      display: flex;
+      justify-content: center;
+    }
+
+    .hero-card {
+      background: rgba(255,255,255,0.1);
+      border: 1px solid rgba(255,255,255,0.18);
+      border-radius: var(--radius-lg);
+      padding: 32px;
+      width: 100%;
+      max-width: 380px;
+      backdrop-filter: blur(8px);
+    }
+
+    .hero-card-header {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 24px;
+    }
+
+    .hero-card-avatar {
+      width: 48px; height: 48px;
+      background: var(--blue);
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .hero-card-avatar svg { width: 26px; height: 26px; fill: white; }
+
+    .hero-card-title { color: white; font-family: 'Montserrat', sans-serif; font-weight: 700; font-size: 15px; }
+    .hero-card-sub { color: rgba(255,255,255,0.6); font-size: 12px; }
+
+    .hero-stats {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 16px;
+      margin-bottom: 24px;
+    }
+
+    .hero-stat {
+      background: rgba(255,255,255,0.08);
+      border-radius: var(--radius-sm);
+      padding: 14px 10px;
+      text-align: center;
+    }
+
+    .hero-stat-num { color: white; font-family: 'Montserrat', sans-serif; font-weight: 800; font-size: 22px; }
+    .hero-stat-label { color: rgba(255,255,255,0.55); font-size: 11px; margin-top: 2px; }
+
+    .hero-checklist { list-style: none; }
+    .hero-checklist li {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      color: rgba(255,255,255,0.8);
+      font-size: 13px;
+      padding: 7px 0;
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+    }
+    .hero-checklist li:last-child { border-bottom: none; }
+    .hero-checklist li::before {
+      content: '✓';
+      width: 20px; height: 20px;
+      background: rgba(74,222,128,0.2);
+      color: #4ade80;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 11px;
+      font-weight: 700;
+      flex-shrink: 0;
+    }
+
+    /* ── TRUST STRIP ── */
+    .trust-strip {
+      background: var(--gray-50);
+      border-top: 1px solid var(--gray-100);
+      border-bottom: 1px solid var(--gray-100);
+      padding: 28px 0;
+    }
+
+    .trust-inner {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 40px;
+      flex-wrap: wrap;
+    }
+
+    .trust-item {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      color: var(--gray-500);
+      font-size: 14px;
+      font-weight: 500;
+    }
+
+    .trust-icon {
+      width: 36px; height: 36px;
+      background: var(--blue-light);
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--blue);
+    }
+
+    .trust-icon svg { width: 18px; height: 18px; }
+
+    /* ── SECTIONS ── */
+    section { padding: 80px 0; }
+
+    .section-label {
+      display: inline-block;
+      font-size: 12px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      color: var(--blue);
+      margin-bottom: 12px;
+    }
+
+    .section-title {
+      font-size: clamp(28px, 4vw, 40px);
+      font-weight: 800;
+      color: var(--navy);
+      letter-spacing: -0.5px;
+      margin-bottom: 16px;
+    }
+
+    .section-sub {
+      font-size: 17px;
+      color: var(--gray-500);
+      max-width: 560px;
+      line-height: 1.7;
+    }
+
+    .section-header { margin-bottom: 56px; }
+    .section-header.centered { text-align: center; }
+    .section-header.centered .section-sub { margin: 0 auto; }
+
+    /* ── SERVICES ── */
+    .services { background: var(--white); }
+
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+    }
+
+    .service-card {
+      background: var(--white);
+      border: 1px solid var(--gray-100);
+      border-radius: var(--radius-md);
+      padding: 32px 28px;
+      transition: all 0.25s;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .service-card::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 3px;
+      background: var(--blue);
+      transform: scaleX(0);
+      transition: transform 0.25s;
+    }
+
+    .service-card:hover {
+      box-shadow: var(--shadow-lg);
+      transform: translateY(-4px);
+      border-color: transparent;
+    }
+
+    .service-card:hover::before { transform: scaleX(1); }
+
+    .service-icon {
+      width: 52px; height: 52px;
+      background: var(--blue-light);
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 20px;
+      color: var(--blue);
+    }
+
+    .service-icon svg { width: 26px; height: 26px; }
+
+    .service-card h3 {
+      font-size: 18px;
+      font-weight: 700;
+      color: var(--navy);
+      margin-bottom: 10px;
+    }
+
+    .service-card p {
+      font-size: 14px;
+      color: var(--gray-500);
+      line-height: 1.65;
+    }
+
+    /* ── HOW IT WORKS ── */
+    .how { background: var(--gray-50); }
+
+    .steps {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 32px;
+      position: relative;
+    }
+
+    .steps::before {
+      content: '';
+      position: absolute;
+      top: 28px;
+      left: calc(16.6% + 20px);
+      right: calc(16.6% + 20px);
+      height: 2px;
+      background: linear-gradient(90deg, var(--blue) 0%, var(--blue-mid) 100%);
+    }
+
+    .step { text-align: center; position: relative; }
+
+    .step-num {
+      width: 56px; height: 56px;
+      background: var(--blue);
+      border-radius: 50%;
+      color: white;
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 800;
+      font-size: 20px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 24px;
+      box-shadow: 0 0 0 8px white, 0 0 0 10px var(--gray-100);
+      position: relative;
+      z-index: 1;
+    }
+
+    .step h3 { font-size: 18px; font-weight: 700; color: var(--navy); margin-bottom: 10px; }
+    .step p { font-size: 14px; color: var(--gray-500); line-height: 1.65; }
+
+    /* ── ABOUT ── */
+    .about { background: var(--white); }
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 72px;
+      align-items: center;
+    }
+
+    .about-visual {
+      background: var(--blue-light);
+      border-radius: var(--radius-lg);
+      aspect-ratio: 4/3;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .about-visual-placeholder {
+      text-align: center;
+      color: var(--blue);
+    }
+
+    .about-visual-placeholder svg { width: 64px; height: 64px; margin-bottom: 12px; }
+    .about-visual-placeholder p { font-size: 12px; color: var(--gray-500); }
+
+    .about-badge {
+      position: absolute;
+      bottom: 20px;
+      right: 20px;
+      background: var(--white);
+      border-radius: var(--radius-md);
+      padding: 14px 18px;
+      box-shadow: var(--shadow-md);
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .about-badge-icon { color: var(--blue); font-size: 28px; line-height: 1; }
+    .about-badge-text { font-family: 'Montserrat', sans-serif; }
+    .about-badge-num { font-weight: 800; font-size: 22px; color: var(--navy); }
+    .about-badge-label { font-size: 11px; color: var(--gray-500); }
+
+    .about-list { list-style: none; margin-top: 28px; }
+    .about-list li {
+      display: flex;
+      align-items: flex-start;
+      gap: 14px;
+      padding: 14px 0;
+      border-bottom: 1px solid var(--gray-100);
+    }
+    .about-list li:last-child { border-bottom: none; }
+
+    .about-list-icon {
+      width: 36px; height: 36px;
+      background: var(--blue-light);
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--blue);
+      flex-shrink: 0;
+    }
+
+    .about-list-icon svg { width: 18px; height: 18px; }
+
+    .about-list-text h4 { font-size: 15px; font-weight: 600; color: var(--navy); margin-bottom: 3px; }
+    .about-list-text p { font-size: 13px; color: var(--gray-500); }
+
+    /* ── TESTIMONIALS ── */
+    .testimonials { background: var(--navy); }
+
+    .testimonials .section-title { color: var(--white); }
+    .testimonials .section-label { color: #60b4ff; }
+    .testimonials .section-sub { color: rgba(255,255,255,0.65); }
+
+    .testimonials-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+
+    .testimonial-card {
+      background: rgba(255,255,255,0.07);
+      border: 1px solid rgba(255,255,255,0.1);
+      border-radius: var(--radius-md);
+      padding: 28px;
+    }
+
+    .testimonial-stars {
+      color: #fbbf24;
+      font-size: 14px;
+      margin-bottom: 14px;
+      letter-spacing: 2px;
+    }
+
+    .testimonial-text {
+      font-size: 14px;
+      color: rgba(255,255,255,0.82);
+      line-height: 1.7;
+      margin-bottom: 20px;
+    }
+
+    .testimonial-author {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .testimonial-avatar {
+      width: 40px; height: 40px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 800;
+      font-size: 14px;
+      color: white;
+    }
+
+    .testimonial-name { color: white; font-size: 14px; font-weight: 600; }
+    .testimonial-location { color: rgba(255,255,255,0.45); font-size: 12px; }
+
+    /* ── CONTACT ── */
+    .contact { background: var(--gray-50); }
+
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1fr 1.2fr;
+      gap: 60px;
+      align-items: start;
+    }
+
+    .contact-info h3 {
+      font-size: 22px;
+      font-weight: 700;
+      color: var(--navy);
+      margin-bottom: 12px;
+    }
+
+    .contact-info p {
+      color: var(--gray-500);
+      font-size: 15px;
+      margin-bottom: 32px;
+      line-height: 1.65;
+    }
+
+    .contact-channels { display: flex; flex-direction: column; gap: 14px; }
+
+    .contact-channel {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      background: var(--white);
+      border: 1px solid var(--gray-100);
+      border-radius: var(--radius-md);
+      padding: 16px 18px;
+      text-decoration: none;
+      transition: all 0.2s;
+      color: var(--gray-900);
+    }
+
+    .contact-channel:hover { border-color: var(--blue); box-shadow: var(--shadow-sm); }
+
+    .contact-channel-icon {
+      width: 40px; height: 40px;
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      flex-shrink: 0;
+    }
+
+    .contact-channel-label { font-size: 12px; color: var(--gray-500); }
+    .contact-channel-value { font-weight: 600; font-size: 14px; color: var(--navy); }
+
+    .contact-form {
+      background: var(--white);
+      border: 1px solid var(--gray-100);
+      border-radius: var(--radius-lg);
+      padding: 36px;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .contact-form h3 {
+      font-size: 20px;
+      font-weight: 700;
+      color: var(--navy);
+      margin-bottom: 24px;
+    }
+
+    .form-group { margin-bottom: 18px; }
+
+    .form-group label {
+      display: block;
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--gray-700);
+      margin-bottom: 6px;
+    }
+
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+      width: 100%;
+      padding: 12px 16px;
+      border: 1.5px solid var(--gray-300);
+      border-radius: var(--radius-sm);
+      font-family: 'Inter', sans-serif;
+      font-size: 14px;
+      color: var(--gray-900);
+      background: var(--white);
+      transition: border-color 0.2s;
+      outline: none;
+    }
+
+    .form-group input:focus,
+    .form-group select:focus,
+    .form-group textarea:focus { border-color: var(--blue); }
+
+    .form-group textarea { resize: vertical; min-height: 100px; }
+
+    .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+
+    /* ── CTA FINAL ── */
+    .cta-final {
+      background: linear-gradient(135deg, var(--blue) 0%, #1a3fa8 100%);
+      padding: 80px 0;
+      text-align: center;
+    }
+
+    .cta-final h2 {
+      font-size: clamp(28px, 4vw, 44px);
+      font-weight: 800;
+      color: var(--white);
+      letter-spacing: -0.5px;
+      margin-bottom: 16px;
+    }
+
+    .cta-final p {
+      font-size: 18px;
+      color: rgba(255,255,255,0.78);
+      margin-bottom: 36px;
+    }
+
+    .cta-actions { display: flex; justify-content: center; gap: 14px; flex-wrap: wrap; }
+
+    /* ── FOOTER ── */
+    footer {
+      background: var(--gray-900);
+      padding: 56px 0 32px;
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 1.5fr 1fr 1fr;
+      gap: 48px;
+      padding-bottom: 40px;
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+      margin-bottom: 28px;
+    }
+
+    .footer-brand .nav-brand-main { color: white; font-size: 18px; }
+    .footer-brand .nav-brand-sub { color: rgba(255,255,255,0.4); }
+
+    .footer-brand p {
+      font-size: 14px;
+      color: rgba(255,255,255,0.5);
+      line-height: 1.65;
+      margin-top: 14px;
+      max-width: 260px;
+    }
+
+    .footer-col h4 {
+      color: white;
+      font-size: 13px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-bottom: 16px;
+    }
+
+    .footer-col ul { list-style: none; }
+    .footer-col ul li { margin-bottom: 10px; }
+    .footer-col ul li a {
+      font-size: 14px;
+      color: rgba(255,255,255,0.5);
+      transition: color 0.2s;
+    }
+    .footer-col ul li a:hover { color: white; }
+
+    .footer-bottom {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      font-size: 13px;
+      color: rgba(255,255,255,0.35);
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    /* ── WHATSAPP FLOAT ── */
+    .whatsapp-float {
+      position: fixed;
+      bottom: 28px;
+      right: 28px;
+      z-index: 999;
+      width: 56px;
+      height: 56px;
+      background: #25d366;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 4px 20px rgba(37,211,102,0.45);
+      transition: transform 0.2s, box-shadow 0.2s;
+      text-decoration: none;
+    }
+
+    .whatsapp-float:hover { transform: scale(1.08); box-shadow: 0 6px 28px rgba(37,211,102,0.55); }
+    .whatsapp-float svg { width: 30px; height: 30px; fill: white; }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 768px) {
+      .nav-links { display: none; }
+      .nav-links.open {
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        top: 68px;
+        left: 0; right: 0;
+        background: white;
+        padding: 20px;
+        gap: 20px;
+        box-shadow: var(--shadow-md);
+        border-top: 1px solid var(--gray-100);
+      }
+      .hamburger { display: flex; }
+      nav { position: relative; }
+
+      .hero { padding: 60px 0 50px; }
+      .hero-content { grid-template-columns: 1fr; gap: 40px; }
+      .hero-visual { display: none; }
+      .hero h1 { font-size: 36px; }
+
+      .services-grid { grid-template-columns: 1fr; }
+      .steps { grid-template-columns: 1fr; }
+      .steps::before { display: none; }
+
+      .about-grid { grid-template-columns: 1fr; }
+      .about-visual { display: none; }
+
+      .testimonials-grid { grid-template-columns: 1fr; }
+
+      .contact-grid { grid-template-columns: 1fr; }
+
+      .footer-grid { grid-template-columns: 1fr; gap: 32px; }
+      .footer-bottom { flex-direction: column; text-align: center; }
+
+      section { padding: 60px 0; }
+
+      .form-row { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+
+<body>
+
+<!-- ── WHATSAPP FLOAT ── -->
+<a href="https://wa.me/59898822937?text=Hola!%20Me%20gustar%C3%ADa%20solicitar%20una%20cotizaci%C3%B3n%20de%20limpieza." class="whatsapp-float" aria-label="Contactar por WhatsApp" target="_blank" rel="noopener">
+  <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+</a>
+
+<!-- ── NAV ── -->
+<nav>
+  <div class="container">
+    <div class="nav-inner">
+      <a href="#" class="nav-logo">
+        <div class="nav-logo-icon">
+          <!-- Reemplazar con: <img src="logo.png" alt="LM PRO"> -->
+          <svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21l9-9m0 0l4-4m-4 4l-4-4m4 4l4-4M7 3l10 10"/><circle cx="18" cy="6" r="3"/></svg>
+        </div>
+        <div class="nav-brand">
+          <div class="nav-brand-main">LM PRO</div>
+          <div class="nav-brand-sub">Limpieza Profesional</div>
+        </div>
+      </a>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#servicios">Servicios</a></li>
+        <li><a href="#como-funciona">¿Cómo funciona?</a></li>
+        <li><a href="#trabajos">Trabajos</a></li>
+        <li><a href="#nosotros">Nosotros</a></li>
+        <li><a href="#contacto">Contacto</a></li>
+      </ul>
+      <a href="#contacto" class="btn btn-primary" style="display:none;" id="navCta">Pedir cotización</a>
+      <div class="hamburger" id="hamburger" aria-label="Menú" role="button" tabindex="0">
+        <span></span><span></span><span></span>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<!-- ── HERO ── -->
+<section class="hero">
+  <div class="container">
+    <div class="hero-content">
+      <div>
+        <div class="hero-badge">
+          <span class="hero-badge-dot"></span>
+          Servicio disponible en Montevideo
+        </div>
+        <h1>Tu hogar,<br><span>impecable</span><br>siempre.</h1>
+        <p class="hero-sub">Limpieza profesional con productos de calidad, personal capacitado y resultados que se notan desde el primer día.</p>
+        <div class="hero-actions">
+          <a href="#contacto" class="btn btn-white btn-lg">Pedir cotización gratis</a>
+          <a href="#como-funciona" class="btn btn-lg" style="background:rgba(255,255,255,0.12); color:white; border:1.5px solid rgba(255,255,255,0.25);">Ver cómo funciona</a>
+        </div>
+      </div>
+      <div class="hero-visual">
+        <div class="hero-card">
+          <div class="hero-card-header">
+            <div class="hero-card-avatar">
+              <svg viewBox="0 0 24 24"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2h11"/></svg>
+            </div>
+            <div>
+              <div class="hero-card-title">Limpieza completada ✓</div>
+              <div class="hero-card-sub">Hoy · Pocitos, Montevideo</div>
+            </div>
+          </div>
+          <div class="hero-stats">
+            <div class="hero-stat">
+              <div class="hero-stat-num">+200</div>
+              <div class="hero-stat-label">Hogares</div>
+            </div>
+            <div class="hero-stat">
+              <div class="hero-stat-num">5★</div>
+              <div class="hero-stat-label">Calificación</div>
+            </div>
+            <div class="hero-stat">
+              <div class="hero-stat-num">100%</div>
+              <div class="hero-stat-label">Garantía</div>
+            </div>
+          </div>
+          <ul class="hero-checklist">
+            <li>Personal capacitado y de confianza</li>
+            <li>Productos profesionales incluidos</li>
+            <li>Puntualidad garantizada</li>
+            <li>Satisfacción o repetimos sin costo</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── TRUST STRIP ── -->
+<div class="trust-strip">
+  <div class="container">
+    <div class="trust-inner">
+      <div class="trust-item">
+        <div class="trust-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+        </div>
+        Personal de confianza
+      </div>
+      <div class="trust-item">
+        <div class="trust-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+        </div>
+        Puntualidad garantizada
+      </div>
+      <div class="trust-item">
+        <div class="trust-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+        </div>
+        Resultados garantizados
+      </div>
+      <div class="trust-item">
+        <div class="trust-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 000 7h5a3.5 3.5 0 010 7H6"/></svg>
+        </div>
+        Precio justo y transparente
+      </div>
+      <div class="trust-item">
+        <div class="trust-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg>
+        </div>
+        Atención por WhatsApp
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ── SERVICES ── -->
+<section class="services" id="servicios">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-label">Servicios</span>
+      <h2 class="section-title">Limpieza a medida<br>de tu hogar</h2>
+      <p class="section-sub">Cada hogar es distinto. Trabajamos con flexibilidad para adaptarnos a tus necesidades y horarios.</p>
+    </div>
+    <div class="services-grid">
+      <div class="service-card">
+        <div class="service-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+        </div>
+        <h3>Limpieza regular</h3>
+        <p>Mantenimiento semanal o quincenal de tu hogar. Pisos, baños, cocina y ambientes. Tu casa siempre lista.</p>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+        </div>
+        <h3>Limpieza profunda</h3>
+        <p>Limpieza a fondo de todos los rincones. Interior de muebles, azulejos, electrodomésticos y más.</p>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><line x1="3" y1="9" x2="21" y2="9"/><line x1="3" y1="15" x2="21" y2="15"/><line x1="9" y1="3" x2="9" y2="21"/><line x1="15" y1="3" x2="15" y2="21"/></svg>
+        </div>
+        <h3>Limpieza de ventanas</h3>
+        <p>Cristales y ventanas sin manchas, con productos especiales que dejan un brillo impecable por más tiempo.</p>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 8.63a19.79 19.79 0 01-3.07-8.67A2 2 0 012 0h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 14h-.08z"/></svg>
+        </div>
+        <h3>Servicio por evento</h3>
+        <p>¿Tuviste una reunión o evento? Dejanos limpiar antes o después para que no te preocupes por nada.</p>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 16V8a2 2 0 00-1-1.73l-7-4a2 2 0 00-2 0l-7 4A2 2 0 003 8v8a2 2 0 001 1.73l7 4a2 2 0 002 0l7-4A2 2 0 0021 16z"/></svg>
+        </div>
+        <h3>Mudanzas</h3>
+        <p>Limpieza de ingreso o egreso para tu nueva vivienda. Entregá o recibí el espacio en perfecto estado.</p>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"/><path d="M19.07 4.93l-1.41 1.41M5.34 17.66l-1.41 1.41M4.93 4.93l1.41 1.41M18.66 17.66l1.41 1.41M2 12h2m16 0h2M12 2v2m0 16v2"/></svg>
+        </div>
+        <h3>Desinfección</h3>
+        <p>Tratamiento de desinfección con productos certificados para proteger a tu familia y mascotas.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── HOW IT WORKS ── -->
+<section class="how" id="como-funciona">
+  <div class="container">
+    <div class="section-header centered">
+      <span class="section-label">¿Cómo funciona?</span>
+      <h2 class="section-title">Simple, rápido y sin vueltas</h2>
+      <p class="section-sub">Reservar tu limpieza es tan fácil como mandar un mensaje. Nosotros nos encargamos del resto.</p>
+    </div>
+    <div class="steps">
+      <div class="step">
+        <div class="step-num">1</div>
+        <h3>Nos contactás</h3>
+        <p>Mandanos un WhatsApp o completá el formulario. Contanos qué necesitás y cuándo querés el servicio.</p>
+      </div>
+      <div class="step">
+        <div class="step-num">2</div>
+        <h3>Te cotizamos</h3>
+        <p>Te enviamos una cotización personalizada sin costo y sin compromiso. Precio claro, sin sorpresas.</p>
+      </div>
+      <div class="step">
+        <div class="step-num">3</div>
+        <h3>¡Listo y brillante!</h3>
+        <p>Nuestro equipo llega puntual, trabaja con cuidado y deja tu hogar impecable. Solo tenés que disfrutarlo.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── ABOUT ── -->
+<section class="about" id="nosotros">
+  <div class="container">
+    <div class="about-grid">
+      <div class="about-visual" aria-label="Foto del equipo de LM PRO en acción">
+        <div class="about-visual-placeholder">
+          <svg viewBox="0 0 64 64" fill="none" stroke="#1a7fe8" stroke-width="2"><path d="M8 56V44a8 8 0 0 1 8-8h32a8 8 0 0 1 8 8v12"/><rect x="20" y="8" width="24" height="24" rx="4"/><path d="M20 32v4a12 12 0 0 0 24 0v-4"/></svg>
+          <p>Limpieza profesional con dedicación</p>
+        </div>
+        <div class="about-badge">
+          <span class="about-badge-icon">⭐</span>
+          <div class="about-badge-text">
+            <div class="about-badge-num">+200</div>
+            <div class="about-badge-label">clientes satisfechos</div>
+          </div>
+        </div>
+      </div>
+      <div>
+        <span class="section-label">Sobre nosotros</span>
+        <h2 class="section-title">Confianza, cuidado<br>y profesionalismo</h2>
+        <p class="section-sub">En LM PRO entendemos que dejarnos entrar a tu hogar es un acto de confianza. Por eso seleccionamos cuidadosamente a nuestro personal y trabajamos con los mejores productos del mercado.</p>
+        <ul class="about-list">
+          <li>
+            <div class="about-list-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+            </div>
+            <div class="about-list-text">
+              <h4>Personal verificado</h4>
+              <p>Todos nuestros colaboradores pasan por un proceso de selección y capacitación riguroso.</p>
+            </div>
+          </li>
+          <li>
+            <div class="about-list-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            </div>
+            <div class="about-list-text">
+              <h4>Servicio en Montevideo</h4>
+              <p>Atendemos todos los barrios de Montevideo con puntualidad y compromiso.</p>
+            </div>
+          </li>
+          <li>
+            <div class="about-list-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 11 12 14 22 4"/><path d="M21 12v7a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2h11"/></svg>
+            </div>
+            <div class="about-list-text">
+              <h4>Satisfacción garantizada</h4>
+              <p>Si no quedás conforme, volvemos sin costo adicional. Tu tranquilidad es nuestra prioridad.</p>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── TRABAJOS REALIZADOS ── -->
+<section class="trabajos" id="trabajos" style="background:var(--gray-50);">
+  <div class="container">
+    <div class="section-header centered">
+      <span class="section-label">Galería</span>
+      <h2 class="section-title">Trabajos realizados</h2>
+      <p class="section-sub">Resultados reales en hogares de Montevideo. Así trabaja LM PRO.</p>
+    </div>
+    <div style="display:grid; grid-template-columns: repeat(2,1fr); gap:16px; max-width:900px; margin:0 auto;">
+      <div style="border-radius:var(--radius-md); overflow:hidden; aspect-ratio:4/3; background:var(--gray-100);">
+        <img src="img/foto1.jpg" alt="Trabajo de limpieza LM PRO" style="width:100%;height:100%;object-fit:cover;">
+      </div>
+      <div style="border-radius:var(--radius-md); overflow:hidden; aspect-ratio:4/3; background:var(--gray-100);">
+        <img src="img/foto2.jpg" alt="Trabajo de limpieza LM PRO" style="width:100%;height:100%;object-fit:cover;">
+      </div>
+      <div style="border-radius:var(--radius-md); overflow:hidden; aspect-ratio:4/3; background:var(--gray-100);">
+        <img src="img/foto3.jpg" alt="Trabajo de limpieza LM PRO" style="width:100%;height:100%;object-fit:cover;">
+      </div>
+      <div style="border-radius:var(--radius-md); overflow:hidden; aspect-ratio:4/3; background:var(--gray-100);">
+        <img src="img/foto4.jpg" alt="Trabajo de limpieza LM PRO" style="width:100%;height:100%;object-fit:cover;">
+      </div>
+      <div style="grid-column:1/-1; border-radius:var(--radius-md); overflow:hidden; background:#000;">
+        <video controls style="width:100%; display:block; max-height:480px;" poster="">
+          <source src="img/trabajo-video.mp4" type="video/mp4">
+        </video>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── TESTIMONIALS ── -->
+<section class="testimonials">
+  <div class="container">
+    <div class="section-header centered">
+      <span class="section-label">Opiniones</span>
+      <h2 class="section-title">Lo que dicen nuestros clientes</h2>
+      <p class="section-sub">Más de 200 familias en Montevideo ya confían en LM PRO.</p>
+    </div>
+    <div class="testimonials-grid">
+      <div class="testimonial-card">
+        <div class="testimonial-stars">★★★★★</div>
+        <p class="testimonial-text">"Increíble el trabajo. Llegaron puntual, son muy prolijos y el hogar quedó reluciente. Lo recomiendo a todo el mundo, desde el primer servicio quedé encantada."</p>
+        <div class="testimonial-author">
+          <div class="testimonial-avatar" style="background:#1a7fe8;">MA</div>
+          <div>
+            <div class="testimonial-name">María A.</div>
+            <div class="testimonial-location">Pocitos, Montevideo</div>
+          </div>
+        </div>
+      </div>
+      <div class="testimonial-card">
+        <div class="testimonial-stars">★★★★★</div>
+        <p class="testimonial-text">"Contraté el servicio de limpieza profunda antes de mudarme y fue lo mejor que pude hacer. El departamento quedó como nuevo. Muy buena relación precio-calidad."</p>
+        <div class="testimonial-author">
+          <div class="testimonial-avatar" style="background:#7c3aed;">JR</div>
+          <div>
+            <div class="testimonial-name">Juan R.</div>
+            <div class="testimonial-location">Carrasco, Montevideo</div>
+          </div>
+        </div>
+      </div>
+      <div class="testimonial-card">
+        <div class="testimonial-stars">★★★★★</div>
+        <p class="testimonial-text">"Llevo varios meses con el servicio semanal y no puedo estar más contenta. Son súper confiables, cuidan mis cosas y siempre dejan todo perfecto. ¡No los cambio!"</p>
+        <div class="testimonial-author">
+          <div class="testimonial-avatar" style="background:#059669;">LF</div>
+          <div>
+            <div class="testimonial-name">Laura F.</div>
+            <div class="testimonial-location">Punta Carretas, Montevideo</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── CONTACT ── -->
+<section class="contact" id="contacto">
+  <div class="container">
+    <div class="section-header centered">
+      <span class="section-label">Contacto</span>
+      <h2 class="section-title">¿Listo para tener un hogar impecable?</h2>
+      <p class="section-sub">Pedí tu cotización gratis hoy. Respondemos en menos de 1 hora.</p>
+    </div>
+    <div class="contact-grid">
+      <div class="contact-info">
+        <h3>Hablemos</h3>
+        <p>Podés contactarnos por cualquiera de estos canales. Estamos disponibles de lunes a sábado, de 8 a 20 hs.</p>
+        <div class="contact-channels">
+          <a href="https://wa.me/59898822937?text=Hola!%20Me%20gustar%C3%ADa%20solicitar%20una%20cotizaci%C3%B3n%20de%20limpieza." class="contact-channel" target="_blank" rel="noopener">
+            <div class="contact-channel-icon" style="background:#25d366;">
+              <svg viewBox="0 0 24 24" fill="currentColor" width="20" height="20"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+            </div>
+            <div>
+              <div class="contact-channel-label">WhatsApp</div>
+              <div class="contact-channel-value">098 822 937</div>
+            </div>
+          </a>
+          <a href="mailto:elimpiezaprofesionallmpro@gmail.com" class="contact-channel">
+            <div class="contact-channel-icon" style="background:var(--blue);">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="20" height="20"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+            </div>
+            <div>
+              <div class="contact-channel-label">Email</div>
+              <div class="contact-channel-value">elimpiezaprofesionallmpro@gmail.com</div>
+            </div>
+          </a>
+          <a href="https://instagram.com/limpiezaprofesionallmpro" class="contact-channel" target="_blank" rel="noopener">
+            <div class="contact-channel-icon" style="background:linear-gradient(45deg,#f09433,#e6683c,#dc2743,#cc2366,#bc1888);">
+              <svg viewBox="0 0 24 24" fill="currentColor" width="20" height="20"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+            </div>
+            <div>
+              <div class="contact-channel-label">Instagram</div>
+              <div class="contact-channel-value">@limpiezaprofesionallmpro</div>
+            </div>
+          </a>
+        </div>
+      </div>
+      <div class="contact-form">
+        <h3>Pedí tu cotización gratis</h3>
+        <form action="https://formsubmit.co/limpiezaprofesionallmpro@gmail.com" method="POST">
+          <input type="hidden" name="_subject" value="Nueva solicitud de cotización – LM PRO">
+          <input type="hidden" name="_captcha" value="false">
+          <input type="hidden" name="_next" value="https://lmpro.vercel.app/#contacto">
+          <div class="form-row">
+            <div class="form-group">
+              <label for="nombre">Nombre</label>
+              <input type="text" id="nombre" name="nombre" placeholder="Tu nombre" required>
+            </div>
+            <div class="form-group">
+              <label for="telefono">Teléfono / WhatsApp</label>
+              <input type="tel" id="telefono" name="telefono" placeholder="099 000 000" required>
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="servicio">¿Qué servicio necesitás?</label>
+            <select id="servicio" name="servicio" required>
+              <option value="" disabled selected>Seleccioná un servicio</option>
+              <option value="regular">Limpieza regular (semanal / quincenal)</option>
+              <option value="profunda">Limpieza profunda</option>
+              <option value="ventanas">Limpieza de ventanas</option>
+              <option value="evento">Limpieza por evento</option>
+              <option value="mudanza">Limpieza por mudanza</option>
+              <option value="desinfeccion">Desinfección</option>
+              <option value="otro">Otro</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="mensaje">Contanos más (opcional)</label>
+            <textarea id="mensaje" name="mensaje" placeholder="Metros cuadrados, cantidad de ambientes, frecuencia deseada..."></textarea>
+          </div>
+          <button type="submit" class="btn btn-primary btn-lg" style="width:100%; justify-content:center;">
+            Enviar solicitud
+          </button>
+          <p style="text-align:center; font-size:12px; color:var(--gray-500); margin-top:12px;">
+            Te respondemos en menos de 1 hora · Sin compromiso
+          </p>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── CTA FINAL ── -->
+<section class="cta-final">
+  <div class="container">
+    <h2>¿Esperás qué para tener<br>un hogar impecable?</h2>
+    <p>Más de 200 familias en Montevideo ya eligieron LM PRO. Sumáte hoy.</p>
+    <div class="cta-actions">
+      <a href="https://wa.me/59898822937?text=Hola!%20Me%20gustar%C3%ADa%20solicitar%20una%20cotizaci%C3%B3n%20de%20limpieza." class="btn btn-white btn-lg" target="_blank" rel="noopener">Escribir por WhatsApp</a>
+      <a href="#contacto" class="btn btn-lg" style="background:rgba(255,255,255,0.15); color:white; border:1.5px solid rgba(255,255,255,0.3);">Ver servicios</a>
+    </div>
+  </div>
+</section>
+
+<!-- ── FOOTER ── -->
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <div class="nav-logo" style="margin-bottom:14px;">
+          <div class="nav-logo-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21l9-9m0 0l4-4m-4 4l-4-4m4 4l4-4M7 3l10 10"/><circle cx="18" cy="6" r="3"/></svg>
+          </div>
+          <div class="nav-brand">
+            <div class="nav-brand-main">LM PRO</div>
+            <div class="nav-brand-sub">Limpieza Profesional</div>
+          </div>
+        </div>
+        <p>Servicio de limpieza profesional para hogares en Montevideo, Uruguay. Confianza, calidad y resultados garantizados.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Servicios</h4>
+        <ul>
+          <li><a href="#servicios">Limpieza regular</a></li>
+          <li><a href="#servicios">Limpieza profunda</a></li>
+          <li><a href="#servicios">Ventanas</a></li>
+          <li><a href="#servicios">Por evento</a></li>
+          <li><a href="#servicios">Mudanzas</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Empresa</h4>
+        <ul>
+          <li><a href="#nosotros">Sobre nosotros</a></li>
+          <li><a href="#como-funciona">Cómo funciona</a></li>
+          <li><a href="#contacto">Contacto</a></li>
+          <!-- <li><a href="privacidad.html">Política de privacidad</a></li> -->
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 LM PRO – Limpieza Profesional. Montevideo, Uruguay.</span>
+      <span>Diseñado con ♥ para un hogar impecable.</span>
+    </div>
+  </div>
+</footer>
+
+<!-- analytics: agregar script de Google Analytics o similar aquí -->
+
+<script>
+  const hamburger = document.getElementById('hamburger');
+  const navLinks = document.getElementById('navLinks');
+  const navCta = document.getElementById('navCta');
+
+  hamburger.addEventListener('click', () => {
+    navLinks.classList.toggle('open');
+  });
+
+  window.addEventListener('resize', () => {
+    if (window.innerWidth > 768) {
+      navLinks.classList.remove('open');
+      navCta.style.display = 'inline-flex';
+    } else {
+      navCta.style.display = 'none';
+    }
+  });
+
+  if (window.innerWidth > 768) navCta.style.display = 'inline-flex';
+
+  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function(e) {
+      const target = document.querySelector(this.getAttribute('href'));
+      if (target) {
+        e.preventDefault();
+        navLinks.classList.remove('open');
+        target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+    });
+  });
+
+  // El formulario envía directo a formsubmit.co
+</script>
+
+</body>
+</html>
